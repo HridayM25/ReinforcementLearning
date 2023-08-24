@@ -49,6 +49,14 @@ def initialize_windyGridworld(rows, columns):
     no_of_actions = 4
     action_space = [0, 1, 2, 3]
     Qtable = np.zeros((ROWS*COLS, no_of_actions))
-    rewards = np.ones(ROWS*COLS) * -1
+    rewards = np.ones((ROWS*COLS)) * -1
     rewards[-1]=10
     return WIND, Qtable, rewards, action_space, ROWS, COLS
+
+def initialize_gridWorld(rows =4, cols =4):
+    actions=4
+    action_space = [0,1,2,3]
+    state_space = np.zeros((rows,cols))
+    rewards = np.ones((rows, cols)) *-1
+    rewards[rows-1][cols-1] = 10
+    return action_space, state_space, rewards
